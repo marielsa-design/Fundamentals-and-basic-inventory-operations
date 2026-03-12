@@ -1,3 +1,6 @@
+# Programa para registrar un producto en un inventario.
+
+
 # Solicitar el nombre de producto
 
 nombre = input("Ingresar el nombre del producto: ")
@@ -20,10 +23,4 @@ while True:
     except ValueError:
         print("Valor no válido. Introduzca un valor válido para la cantidad.")
 
-# Calcular costo total
-
-costo_total = precio * cantidad
-
-# Mostrar resultados
-
-print("producto", nombre, "| precio:", precio, "| cantidad:" , cantidad, " | Total:" , costo_total)
+##################################################################################
