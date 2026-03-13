@@ -1,51 +1,59 @@
-inventory = 5
-product = ["vacio"] * inventory
+# Datos de inventario
 
-option = 1
-print("Bienvenido al Sistema de Inventario")
+producto = ["vacio"] * 5
+
+print("Inventario de productos")
 
 while True:
-    print("1. Agregar producto")
-    print("2. Eliminar producto")
-    print("3. Ver productos")
-    print("4. Salir")
+    
+    print("Menu")
+    print("1. Agregar producto.")
+    print("2. Ver los productos.")
+    print("3. Actualizar los productos.")
+    print("4. Eliminar producto.")
+    print("5. Salir")
+    opcion = int(input("Escoge una opcion: "))
 
     try:
-        option = int(input("Elige una opción: "))
+        opcion = int(input("Escoge una opcion: "))
     except ValueError:
-        print("Por favor ingresa un número válido.")
+        print("Ingrese un numero valido")
         continue
 
-    match option:
+
+    match opcion:
+
+        # Agregar producto
         case 1:
-            if product.count("vacio") > 0:
-                new_product = input("Ingresa el nombre del producto\n").upper()
-                if new_product in product:
+            if producto.count("vacio") > 0:
+
+                new_producto = input("Ingresa el nombre del producto\n").upper()
+                
+                if new_producto in producto:
                     print("Ese producto ya existe")
+                
                 else:
-                    index = product.index("vacio")
-                    product[index] = new_product
-                    print(f"Producto '{new_product}' agregado correctamente")
+                    index = producto.index("vacio")
+                    producto[index] = new_producto
+                    print(f"Producto '{new_producto}' agregado correctamente")
             else:
                 print("El inventario está lleno")
-
+        #Ver inventario
+        
         case 2:
             remove = input("Ingresa el nombre del producto a eliminar\n").upper()
-            if remove in product:
-                index = product.index(remove)
-                product[index] = "vacio"
+            if remove in producto:
+                index = producto.index(remove)
+                producto[index] = "vacio"
                 print(f"Producto '{remove}' eliminado correctamente")
             else:
                 print("Producto no encontrado")
 
         case 3:
-            print("\nInventario actual:")
-            for i, item in enumerate(product):
-                print(f" Espacio {i+1}: {item}")
+            print("nventario actual:")
+            for i, objeto in enumerate(producto):
+                print(f" Espacio {i+1}: {objeto}")
 
         case 4:
             print("¡Adiós!")
             break
-
-        case _:
-            print("Opción inválida. Por favor elige entre 1 y 4")

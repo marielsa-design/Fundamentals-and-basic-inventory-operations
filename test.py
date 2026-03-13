@@ -2,10 +2,10 @@
 
 
 # Solicitar el nombre de producto
-
-nombre = input("Ingresar el nombre del producto: ")
-
-# Validar «el precio»
+print("# * 25")
+nombre = input("Ingrese el nombre del producto: ")
+print("# * 25")
+# Solicitar y validar de "el precio"
 
 while True:
     try:
@@ -14,7 +14,7 @@ while True:
     except ValueError:
         print("Valor no válido. Ingresar un número válido para el precio.")
 
-# Validar «la cantidad»
+# Solicitar y validar de "la cantidad"
 
 while True:
     try:
@@ -23,4 +23,7 @@ while True:
     except ValueError:
         print("Valor no válido. Introduzca un valor válido para la cantidad.")
 
-##################################################################################
+# Calcular costo total (Operación matemática)
+
+costo_total = precio * cantidad
+
